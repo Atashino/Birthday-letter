@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Birthday - Page 3 (Explosion)</title>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Caveat");
+@import url("https://fonts.googleapis.com/css?family=Ledger");
+
+* {
+  box-sizing: border-box;
+}
+body, button, input {
+  font-family: "Ledger";
+}
+body {
+  background-color: lightblue;
+  overflow: hidden;
+}
+#info {
+  position: absolute;
+  font-family: Caveat;
+  color: #F1CFA0;
+  padding-top: 15px;
+  font-size: 5vh;
+  opacity: 0.7;
+}
+.shaker {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+.dialog {
+  z-index: 10;
+  top: 30vh;
+  transform: translateY(30vh);
+  margin: 0 auto;
+  width: 30vw;
+  background-color: #f1cfa0;
+  text-align: center;
+  min-width: 200px;
+  box-shadow: 10px 10px #254f49;
+}
+.dialog:after { content: ""; display: block; padding-bottom: 0; }
+.shadow { width: 100%; height: 0; padding-left: 50%; padding-top: 30%; overflow: hidden; }
+.shadow div {
+  width: 0; height: 0;
+  margin-left: -1000px; margin-top: -600px;
+  border-left: 1000px solid transparent;
+  border-right: 1000px solid transparent;
+  border-top: 600px solid #f2a71e;
+}
+#stamp-envelope {
+  text-align: center;
+  border-radius: 100%;
+  width: 0; height: 0;
+  padding-left: 13%; padding-top: 14%;
+  margin-bottom: 20%;
+  margin-top: -12.5%;
+  background-color: Pink;
+  border: 2px solid Pink;
+  color: #f2a71e; font-weight: bold;
+  text-transform: uppercase; cursor: pointer;
+  user-select: none;
+  box-shadow: 2px 3px #7e54e8;
+}
+.stamp-wrapper { text-align: right; margin-bottom: 20px; margin-right: 20px; }
+#stamp-footer {
+  display: inline-block;
+  padding: 16px 25px;
+  color: Mauve; font-size: 35px; font-weight: bold;
+  border: 4px solid Baby blue; border-radius: 50%;
+  cursor: pointer; background-color: Peach;
+}
+.hvr-buzz { display: inline-block; }
+.hvr-buzz:hover, .hvr-buzz:active { animation: hvr-buzz 0.4s linear infinite; }
+@keyframes hvr-buzz {
+  50% { transform: translateX(3px) rotate(2deg); }
+  100% { transform: translateX(-3px) rotate(-2deg); }
+}
+.message {
+  display: none;
+  position: absolute;
+  width: 400px;
+  max-height: 65vh;
+  margin-left: -200px;
+  left: 50vw; top: 47vh;
+  margin-top: -30vh;
+}
+.part-one {
+  position: relative;
+  background-color: #f1cfa0;
+  max-height: 64vh;
+  overflow-y: auto;
+}
+.message-header { width: inherit; height: 5vh; background-color: #f2a71e; }
+.message-text {
+  padding: 40px 30px 0;
+  letter-spacing: 1px; line-height: 25px;
+  font-family: "Caveat", cursive;
+  color: #3a736c;
+}
+.message-footer { background-color: #d34f27; width: 400px; height: 5vh; }
+#stamp-footer { width: 60px; height: 60px; margin-top: -34px; }
+</style>
+</head>
+<body>
+
+<section id="page3" style="display:block;">
+  <div class="shaker">
+    <div id="template" class="dialog">
+      <div class="dialog-body">
+        <div id="triangle-wrapper">
+          <div class="shadow"><div></div></div>
+        </div>
+        <button class="stamp hvr-buzz" id="stamp-envelope"></button>
+      </div>
+      <div id="info">open me</div>
+    </div>
+    <div class="message">
+      <div class="part-one" id="part-one-message">
+        <div class="message-header"></div>
+        <div class="message-text">
+          25 July, <br><br>
+          Couple of caring and wonderful partner bring out a lovely princess to the family. Beautiful as the flower on her name, sweet and a calm soul as her favourite color, bright and colorful personality just like the star. Dayang Nur Camelia. <br><br>
+		  Big thanks to the world, I never regret knowing her. Your kindness, your quirkiness, your random jokes, its so much fun to be with you. And yeah, seeing you laughing out loud is a rare things, when you did, I cant help but to smile. First, because you had a cute smile, but most of all, you look so much happpy. <br><br>
+		  And that's my biggest hope on this letter. I hope, you no longer shed a sad tear, saya harap awak happy sentiasa dengan family awak, capai apa yang awak nak, berjaya dalam tiap benda awak buat. I wish for all the best things in your life, Alia. <br><br>
+		  I also wanna say thanks to you, a girl with full of suprise, big fan sayur😂 Kadang lebih banyak dari nasi. Remembering few detail that i never expected. That include the keychain yknow, had me shocked for a moment😂 but yeah, that means you care, and you always giving your best. Im on my knees for this, I adore you for that. <br><br>
+		  Thank you for that cili oil and.. sayur kailang ke ape ntah, itu gentle sedap 😭 And sebab awak, saya jadi big fan szindore punya perfume. Cant denied that one really and I'm really thankful to you for always be there, showing the upmost care. Thank you for showing me part of the world i never knew, giving me the best laugh, had me smiling all the time. You are, truly, someone that are special <br><br>
+          May you always in good hands, take care Lia, iboh begadang kay. *Puk Puk*
+        </div>
+        <div class="message-footer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.1/dat.gui.js"></script>
+<script src="https://cdn.rawgit.com/josephg/noisejs/master/perlin.js"></script>
+<script>
+var options = {
+  drag: 1, gravity: 0, lifespan: 161,
+  maxSpeed: 100, maxParticles: 500,
+  particleColors: ["242, 167, 30", "241, 207, 160", "211, 79, 39"],
+  particlesPerPress: 400, jitter: 0, randomness: 1,
+  size: 10, sizeRange: 10, shrinkSpeed: 0.1
+};
+var ParticleSystem = function(){ this.particles=[]; };
+ParticleSystem.prototype.addParticle=function(o){ for(var i=0;i<o.numToAdd;i++){this.particles.push(new Particle(o));} while(this.particles.length>options.maxParticles){this.removeParticle();}};
+ParticleSystem.prototype.removeParticle=function(){this.particles.shift();};
+ParticleSystem.prototype.update=function(){this.particles.forEach(p=>{if(p.lifespan>0)p.update();});};
+ParticleSystem.prototype.draw=function(){this.particles.forEach(p=>p.draw());};
+
+function Particle(o){
+  this.lifespan=options.lifespan;
+  this.color=options.particleColors[Math.floor(Math.random()*options.particleColors.length)];
+  this.size=options.size+Math.random()*options.sizeRange-options.sizeRange/2;
+  this.x=o.x; this.y=o.y;
+  var velXMin=-o.leftSpread/(this.lifespan/10);
+  var velXMax=o.rightSpread/(this.lifespan/10);
+  var velYMin=-o.topSpread/(this.lifespan/10);
+  var velYMax=o.bottomSpread/(this.lifespan/10);
+  var originLeftPercent=o.leftSpread/(o.leftSpread+o.rightSpread);
+  var originTopPercent=o.topSpread/(o.topSpread+o.bottomSpread);
+  this.velX=Math.random()*(velXMax-velXMin)- (velXMax-velXMin)*originLeftPercent;
+  this.velY=Math.random()*(velYMax-velYMin)- (velYMax-velYMin)*originTopPercent;
+  this.xOff=Math.random()*6400; this.yOff=Math.random()*6400;
+  this.opacity=1; this.gravity=options.gravity; this.drag=options.drag;
+}
+Particle.prototype.update=function(){
+  this.velY+=this.gravity;
+  var randomX=noise.simplex2(this.xOff,0);
+  var randomY=noise.simplex2(this.yOff,0);
+  this.velX+=randomX/(10/options.randomness);
+  this.velY+=randomY/(10/options.randomness);
+  this.xOff+=options.jitter; this.yOff+=options.jitter;
+  this.velX*=this.drag; this.velY*=this.drag;
+  this.x+=this.velX; this.y+=this.velY;
+  this.opacity=this.lifespan/100;
+  this.size-=options.shrinkSpeed; this.size=Math.max(0,this.size);
+  this.lifespan-=1;
+  if(this.size<=0.1||this.opacity<=0.01){this.lifespan=0;}
+};
+Particle.prototype.draw=function(){
+  context.fillStyle="rgba("+this.color+", "+this.opacity+")";
+  context.beginPath();
+  context.arc(this.x,this.y,this.size,0,Math.PI*2);
+  context.closePath(); context.fill();
+};
+
+function loop(){ context.clearRect(0,0,screenWidth,screenHeight); ps.update(); ps.draw(); requestAnimationFrame(loop); }
+function explode(el,x,y){
+  var rect=el.getBoundingClientRect();
+  ps.addParticle({
+    numToAdd:options.particlesPerPress, x:x, y:y,
+    leftSpread:x-rect.left, rightSpread:rect.right-x,
+    topSpread:y-rect.top, bottomSpread:rect.bottom-y
+  });
+}
+
+var ps, context, screenWidth=window.innerWidth, screenHeight=window.innerHeight;
+function updateCanvasVars(){ screenWidth=window.innerWidth; screenHeight=window.innerHeight; canvas.width=screenWidth; canvas.height=screenHeight; }
+var canvas=document.createElement("canvas"); context=canvas.getContext("2d");
+$(".shaker").append(canvas);
+updateCanvasVars(); $(window).on("resize",updateCanvasVars);
+noise.seed(Math.floor(Math.random()*64000));
+ps=new ParticleSystem(); loop();
+</script>
+
+<script>
+(function(){
+  setTimeout(function(){  // 1 second delay before explosion
+    var dialog=document.querySelector('.dialog');
+    var rect=dialog.getBoundingClientRect();
+    var x=rect.left+rect.width/2+window.pageXOffset;
+    var y=rect.top+rect.height/2+window.pageYOffset;
+    explode(dialog,x,y);
+    $('.dialog').hide();
+    $('.message').fadeIn(2000);
+    setTimeout(function(){ $(dialog).css('z-index', 1); }, 200);
+    var estimatedMs=options.lifespan*(1000/60);
+    setTimeout(function(){ startEmojiFall(); }, estimatedMs+1000);
+  }, 400);
+})();
+
+function startEmojiFall(){
+  var emojiCanvas=document.createElement('canvas');
+  emojiCanvas.style.position='fixed';
+  emojiCanvas.style.top='0'; emojiCanvas.style.left='0';
+  emojiCanvas.style.pointerEvents='none'; emojiCanvas.style.zIndex=30;
+  document.body.appendChild(emojiCanvas);
+  var ctx=emojiCanvas.getContext('2d');
+  function resize(){ emojiCanvas.width=window.innerWidth; emojiCanvas.height=window.innerHeight; }
+  resize(); window.addEventListener('resize',resize);
+  var emojis=['❤️','⭐','🎉','🎂'], parts=[];
+  for(var i=0;i<15;i++){
+    parts.push({ x:Math.random()*emojiCanvas.width, y:Math.random()*-emojiCanvas.height,
+      e:emojis[Math.floor(Math.random()*emojis.length)], size:Math.random()*30+20, speed:Math.random()*1+0.5 });
+  }
+  function draw(){
+    ctx.clearRect(0,0,emojiCanvas.width,emojiCanvas.height);
+    ctx.textAlign='left';
+    for(var i=0;i<parts.length;i++){
+      var p=parts[i]; ctx.font=p.size+'px Comic Sans MS'; ctx.fillText(p.e,p.x,p.y);
+      p.y+=p.speed; if(p.y>emojiCanvas.height){ p.y=-30; p.x=Math.random()*emojiCanvas.width; }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+</script>
+</body>
+</html>
